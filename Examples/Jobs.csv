@@ -1,0 +1,3 @@
+﻿"JobName","JobType","IsEnabled","Description","Id","Repository","ScheduleEnabled","ObjectCount"
+"Dev2","VmbApiPolicyTempJob",,"Created by syachiku.local\kyokoi at 2026/10/04 7:51.","73dcb881-f44e-4bac-a6cf-7c6f492f3498",,"True","1"
+"rhel10-dev","VmbApiPolicyTempJob",,"Created by syachiku.local\kyokoi at 2026/10/04 19:43.","60b7cdbc-aad3-4087-a153-785f080e9ee0",,"True","1"

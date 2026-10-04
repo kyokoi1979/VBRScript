@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Veeam バックアップジョブ パラメータシート</title>
+<style>
+  :root {
+    --bg:          #fff;
+    --text:        #222;
+    --head-bg:     #1e3a5f;
+    --head-fg:     #fff;
+    --h2-bg:       #2d6a9f;
+    --th-bg:       #eef2f7;
+    --border:      #c4d0de;
+    --empty:       #aaa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Meiryo', 'Yu Gothic', 'Noto Sans JP', sans-serif;
+    background: var(--bg); color: var(--text); font-size: 13px; line-height: 1.65;
+  }
+  .page { max-width: 960px; margin: 0 auto; padding: 28px 20px; }
+
+  /* レポートヘッダ */
+  .report-header {
+    background: var(--head-bg); color: var(--head-fg);
+    padding: 14px 24px; border-radius: 6px; margin-bottom: 28px;
+  }
+  .report-header h1 { font-size: 17px; }
+  .report-header p  { font-size: 11px; margin-top: 4px; opacity: .75; }
+
+  /* ジョブタイトル */
+  h1.job-title {
+    font-size: 15px; background: var(--head-bg); color: var(--head-fg);
+    padding: 9px 16px; border-radius: 4px; margin-bottom: 14px;
+  }
+
+  /* セクション見出し */
+  h2 {
+    font-size: 12px; background: var(--h2-bg); color: #fff;
+    padding: 5px 12px; margin: 14px 0 0; border-radius: 3px;
+  }
+
+  /* テーブル共通 */
+  table { width: 100%; border-collapse: collapse; border: 1px solid var(--border); }
+  th, td { border: 1px solid var(--border); padding: 5px 10px; vertical-align: top; }
+
+  /* ラベル列 (2カラムテーブル) */
+  table:not(.wide) th {
+    background: var(--th-bg); width: 230px;
+    font-weight: normal; color: #444; white-space: nowrap;
+  }
+  table:not(.wide) td { background: #fff; }
+
+  /* ワイドテーブル (保護対象) */
+  table.wide th { background: var(--th-bg); font-weight: normal; text-align: left; }
+  table.wide td { background: #fff; }
+
+  .empty { color: var(--empty); }
+
+  hr.job-sep { border: none; border-top: 2px solid var(--border); margin: 40px 0; }
+
+  .footer { text-align: right; font-size: 11px; color: #999; margin-top: 32px; }
+
+  @media print {
+    body { font-size: 11px; }
+    .page { padding: 0; max-width: 100%; }
+    section { page-break-after: always; }
+    hr.job-sep { display: none; }
+    .report-header, h1.job-title, h2 { border-radius: 0 !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="report-header">
+  <h1>Veeam Backup &amp; Replication &mdash; バックアップジョブ パラメータシート</h1>
+  <p>生成日時: 2026/10/04 20:20:02 &nbsp;|&nbsp; ソース: RawJobDefinition.json &nbsp;|&nbsp; ジョブ数: 2</p>
+</div>
+
+<section>
+<h1 class="job-title">Dev2</h1>
+
+<h2>1. ジョブ基本情報</h2>
+<table>
+<tr><th>ジョブ名</th><td>Dev2</td></tr>
+<tr><th>ジョブタイプ</th><td>Proxmox Backup</td></tr>
+<tr><th>説明</th><td>Created by syachiku.local\kyokoi at 2026/10/04 7:51.</td></tr>
+<tr><th>作成日時</th><td>2026/10/04 07:56:35</td></tr>
+<tr><th>最終更新者</th><td>syachiku.local\kyokoi</td></tr>
+<tr><th>ジョブ ID</th><td>73dcb881-f44e-4bac-a6cf-7c6f492f3498</td></tr>
+</table>
+
+<h2>2. 保護対象</h2>
+<table class="wide">
+<tr><th>名前</th><th>種別</th><th>ロール</th><th>場所</th></tr>
+<tr><td>dev2</td><td>Virtual Machine</td><td>0</td><td></td></tr>
+</table>
+
+<h2>3. ストレージ / 保持設定</h2>
+<table>
+<tr><th>保持タイプ</th><td>日数</td></tr>
+<tr><th>リストアポイント数</th><td>0</td></tr>
+<tr><th>保持日数</th><td>7</td></tr>
+<tr><th>削除済みVMデータ保持</th><td>無効</td></tr>
+<tr><th>圧縮レベル</th><td>最適 (既定)</td></tr>
+<tr><th>ストレージブロックサイズ</th><td>8 MB (ローカルターゲット)</td></tr>
+<tr><th>重複排除</th><td>有効</td></tr>
+<tr><th>整合性チェック</th><td>有効</td></tr>
+<tr><th>ストレージ暗号化</th><td>無効</td></tr>
+</table>
+
+<h2>4. バックアップ方式</h2>
+<table>
+<tr><th>バックアップアルゴリズム</th><td>フォーエバーフォワードインクリメンタル</td></tr>
+<tr><th>合成フルへ変換</th><td>有効</td></tr>
+<tr><th>ロールバックへ変換</th><td>無効</td></tr>
+</table>
+
+<h2>5. スケジュール</h2>
+<table>
+<tr><th>実行スケジュール</th><td>手動実行</td></tr>
+<tr><th>リトライ回数</th><td>3</td></tr>
+<tr><th>リトライ間隔 (分)</th><td>10</td></tr>
+<tr><th>次回実行予定</th><td><span class="empty">&mdash;</span></td></tr>
+<tr><th>最終実行</th><td>10/04/2026 07:56:54</td></tr>
+<tr><th>バックアップウィンドウ</th><td>無効</td></tr>
+</table>
+
+<h2>6. 通知設定</h2>
+<table>
+<tr><th>メール通知</th><td>無効 (グローバル設定を使用)</td></tr>
+<tr><th>追加通知先アドレス</th><td><span class="empty">&mdash;</span></td></tr>
+<tr><th>成功時通知</th><td>有効</td></tr>
+<tr><th>警告時通知</th><td>有効</td></tr>
+<tr><th>エラー時通知</th><td>有効</td></tr>
+<tr><th>最終リトライのみ通知</th><td>有効</td></tr>
+<tr><th>通知件名テンプレート</th><td>[%JobResult%] %JobName% (%ObjectCount% objects) %Issues%</td></tr>
+</table>
+
+</section><hr class='job-sep'>
+<section>
+<h1 class="job-title">rhel10-dev</h1>
+
+<h2>1. ジョブ基本情報</h2>
+<table>
+<tr><th>ジョブ名</th><td>rhel10-dev</td></tr>
+<tr><th>ジョブタイプ</th><td>Proxmox Backup</td></tr>
+<tr><th>説明</th><td>Created by syachiku.local\kyokoi at 2026/10/04 19:43.</td></tr>
+<tr><th>作成日時</th><td>2026/10/04 20:07:29</td></tr>
+<tr><th>最終更新者</th><td>syachiku.local\kyokoi</td></tr>
+<tr><th>ジョブ ID</th><td>60b7cdbc-aad3-4087-a153-785f080e9ee0</td></tr>
+</table>
+
+<h2>2. 保護対象</h2>
+<table class="wide">
+<tr><th>名前</th><th>種別</th><th>ロール</th><th>場所</th></tr>
+<tr><td>rhel10-dev</td><td>Virtual Machine</td><td>0</td><td></td></tr>
+</table>
+
+<h2>3. ストレージ / 保持設定</h2>
+<table>
+<tr><th>保持タイプ</th><td>日数</td></tr>
+<tr><th>リストアポイント数</th><td>0</td></tr>
+<tr><th>保持日数</th><td>7</td></tr>
+<tr><th>削除済みVMデータ保持</th><td>無効</td></tr>
+<tr><th>圧縮レベル</th><td>最適 (既定)</td></tr>
+<tr><th>ストレージブロックサイズ</th><td>8 MB (ローカルターゲット)</td></tr>
+<tr><th>重複排除</th><td>有効</td></tr>
+<tr><th>整合性チェック</th><td>有効</td></tr>
+<tr><th>ストレージ暗号化</th><td>無効</td></tr>
+</table>
+
+<h2>4. バックアップ方式</h2>
+<table>
+<tr><th>バックアップアルゴリズム</th><td>フォーエバーフォワードインクリメンタル</td></tr>
+<tr><th>合成フルへ変換</th><td>有効</td></tr>
+<tr><th>ロールバックへ変換</th><td>無効</td></tr>
+</table>
+
+<h2>5. スケジュール</h2>
+<table>
+<tr><th>実行スケジュール</th><td>毎日  22:00</td></tr>
+<tr><th>リトライ回数</th><td>3</td></tr>
+<tr><th>リトライ間隔 (分)</th><td>10</td></tr>
+<tr><th>次回実行予定</th><td>2026/10/10 22:00:00</td></tr>
+<tr><th>最終実行</th><td>10/04/2026 20:20:00</td></tr>
+<tr><th>バックアップウィンドウ</th><td>無効</td></tr>
+</table>
+
+<h2>6. 通知設定</h2>
+<table>
+<tr><th>メール通知</th><td>無効 (グローバル設定を使用)</td></tr>
+<tr><th>追加通知先アドレス</th><td><span class="empty">&mdash;</span></td></tr>
+<tr><th>成功時通知</th><td>有効</td></tr>
+<tr><th>警告時通知</th><td>有効</td></tr>
+<tr><th>エラー時通知</th><td>有効</td></tr>
+<tr><th>最終リトライのみ通知</th><td>有効</td></tr>
+<tr><th>通知件名テンプレート</th><td>[%JobResult%] %JobName% (%ObjectCount% objects) %Issues%</td></tr>
+</table>
+
+</section>
+
+<p class="footer">Generated by Generate-ParameterSheet.ps1</p>
+</div>
+</body>
+</html>
